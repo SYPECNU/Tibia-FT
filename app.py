@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error
 # ========== Step 1: 加载数据并重命名列 ==========
 @st.cache_data
 def load_data():
-    data1 = pd.read_csv(r"D:\A运动生物力学\新疆师范大学博士资料\小论文\MTSS\数据\MTSS-zixuan.csv", encoding='gbk')
+    data1 = pd.read_csv("MTSS-zixuan.csv", encoding='gbk')
     data1.dropna(inplace=True)
 
     data1.columns = [
@@ -72,3 +72,4 @@ predicted_load = model.predict(user_input_df)
 # 显示结果
 st.subheader("Prediction Result")
 st.write(f"**Predicted Tibial Load:** `{predicted_load[0]:.2f}` N/kg")
+
