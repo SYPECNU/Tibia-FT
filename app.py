@@ -55,7 +55,7 @@ model.fit(X_train, y_train)
 # ========== Step 5: Streamlit 前端界面 ==========
 st.title("Personalized Tibial Load Prediction Tool")
 st.write("""
-    Based on the running parameters you entered on the left, the model has estimated your tibial load during this running session as shown below. Please note that these values represent model-based predictions and may contain minor deviations from actual measurements.).
+    Based on the running parameters you entered on the left, the model has estimated your tibial load during this running session as shown below. Please note that these values represent model-based predictions and may contain minor deviations from actual measurements.
 """)
 
 st.sidebar.header("Input Parameters")
@@ -72,5 +72,6 @@ predicted_load = model.predict(user_input_df)
 # 显示结果
 st.subheader("Prediction Result")
 st.write(f"**Predicted Tibial Load:** `{predicted_load[0]:.2f}` N/kg")
+
 
 
