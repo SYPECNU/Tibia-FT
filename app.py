@@ -53,9 +53,9 @@ model = xgb.XGBRegressor(
 model.fit(X_train, y_train)
 
 # ========== Step 5: Streamlit 前端界面 ==========
-st.title("Tibial Load Prediction Based on Joint Angles and Pelvic Lean")
+st.title("Personalized Tibial Load Prediction Tool")
 st.write("""
-    Please enter your joint angles and pelvic lean values below (in degrees).
+    Based on the running parameters you entered on the left, the model has estimated your tibial load during this running session as shown below. Please note that these values represent model-based predictions and may contain minor deviations from actual measurements.).
 """)
 
 st.sidebar.header("Input Parameters")
@@ -72,4 +72,5 @@ predicted_load = model.predict(user_input_df)
 # 显示结果
 st.subheader("Prediction Result")
 st.write(f"**Predicted Tibial Load:** `{predicted_load[0]:.2f}` N/kg")
+
 
